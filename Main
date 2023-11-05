@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opsi;
+
+        do {
+            System.out.println("Pilih opsi konversi:");
+            System.out.println("1. Biner ke Desimal");
+            System.out.println("2. Desimal ke Biner");
+            System.out.println("3. Biner ke Heksadesimal");
+            System.out.println("4. Heksadesimal ke Biner");
+            System.out.println("5. Desimal ke Heksadesimal");
+            System.out.println("6. Heksadesimal ke Desimal");
+            System.out.println("7. Keluar");
+
+            opsi = scanner.nextInt();
+            scanner.nextLine(); 
+
+            if (opsi == 1) {
+                System.out.print("Masukkan bilangan biner: ");
+                String binerString = scanner.nextLine();
+                int desimal1 = Integer.parseInt(binerString, 2);
+                System.out.println("Hasil konversi: " + desimal1);
+            } else if (opsi == 2) {
+                System.out.print("Masukkan bilangan desimal: ");
+                int desimal2 = scanner.nextInt();
+                String binerString2 = Integer.toBinaryString(desimal2);
+                System.out.println("Hasil konversi: " + binerString2);
+            } else if (opsi == 3) {
+                System.out.print("Masukkan bilangan biner: ");
+                String binerString3 = scanner.nextLine();
+                int desimal3 = Integer.parseInt(binerString3, 2);
+                String hexaString1 = Integer.toHexString(desimal3);
+                System.out.println("Hasil konversi: " + hexaString1.toUpperCase());
+            } else if (opsi == 4) {
+                System.out.print("Masukkan bilangan heksadesimal: ");
+                String hexaString2 = scanner.nextLine();
+                int desimal4 = Integer.parseInt(hexaString2, 16);
+                String binerString4 = Integer.toBinaryString(desimal4);
+                System.out.println("Hasil konversi: " + binerString4);
+            } else if (opsi == 5) {
+                System.out.print("Masukkan bilangan desimal: ");
+                int desimal5 = scanner.nextInt();
+                String hexaString3 = Integer.toHexString(desimal5);
+                System.out.println("Hasil konversi: " + hexaString3.toUpperCase());
+            } else if (opsi == 6) {
+                System.out.print("Masukkan bilangan heksadesimal: ");
+                String hexaString4 = scanner.nextLine();
+                int desimal6 = Integer.parseInt(hexaString4, 16);
+                System.out.println("Hasil konversi: " + desimal6);
+            } else if (opsi == 7) {
+                System.out.println("Terima kasih, program diberhentikan.");
+            } else {
+                System.out.println("Opsi tidak valid. Silakan pilih antara 1 sampai 7.");
+            }
+        } while (opsi != 7);
+    }
+}
